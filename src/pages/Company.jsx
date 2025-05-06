@@ -1,15 +1,15 @@
 // src/pages/Company.jsx
 import React from 'react';
-import { Accordion, ListGroup, Container, Row, Col } from 'react-bootstrap';
+import { Row, Col, Accordion, ListGroup } from 'react-bootstrap';
 
 export default function Company() {
   return (
-    <div>
-      <Row className="g-4">
-        <Col lg={6}>
-          <h2 className="mb-4">Mode Opératoire</h2>
-          <Accordion defaultActiveKey="0">
-            <Accordion.Item eventKey="0">
+    <div className="page-wrapper py-5" >
+      <Row className="g-4" >
+        <Col lg={6} style={{ minWidth: '1200px' }}>
+          <h2 data-aos="fade-down" >Mode Opératoire</h2>
+          <Accordion defaultActiveKey="0" data-aos="fade-up" data-aos-delay="100">
+            <Accordion.Item eventKey="0" data-aos="fade-right">
               <Accordion.Header>Infrastructure</Accordion.Header>
               <Accordion.Body>
                 <ListGroup variant="flush">
@@ -19,7 +19,7 @@ export default function Company() {
                 </ListGroup>
               </Accordion.Body>
             </Accordion.Item>
-            <Accordion.Item eventKey="1">
+            <Accordion.Item eventKey="1" data-aos="fade-right" data-aos-delay="150">
               <Accordion.Header>Processus Projet</Accordion.Header>
               <Accordion.Body>
                 <ol>
@@ -33,10 +33,11 @@ export default function Company() {
             </Accordion.Item>
           </Accordion>
         </Col>
-        <Col lg={6}>
-          <h2 className="mb-4">Gouvernance</h2>
-          <Accordion>
-            <Accordion.Item eventKey="0">
+
+        <Col lg={6} style={{ width: '1200px' }}>
+          <h2 data-aos="fade-down" data-aos-delay="200">Gouvernance</h2>
+          <Accordion data-aos="fade-up" data-aos-delay="300">
+            <Accordion.Item eventKey="0" data-aos="fade-left">
               <Accordion.Header>Conformité</Accordion.Header>
               <Accordion.Body>
                 <ListGroup variant="flush">
@@ -46,7 +47,7 @@ export default function Company() {
                 </ListGroup>
               </Accordion.Body>
             </Accordion.Item>
-            <Accordion.Item eventKey="1">
+            <Accordion.Item eventKey="1" data-aos="fade-left" data-aos-delay="150">
               <Accordion.Header>Financement</Accordion.Header>
               <Accordion.Body>
                 <ListGroup variant="flush">

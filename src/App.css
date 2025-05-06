@@ -1,69 +1,54 @@
-#root {
-  max-width: 1280px;
+/* Desktop‑first container */
+.main-container {
+  max-width: 1900px;  /* largeur max pour grand écran */
+  margin: 0 auto;     /* centré horizontalement */
+  padding: 2rem 1rem; /* espacement intérieur */
+}
+
+/* Décalage sous navbar fixe */
+body {
+  padding-top: 80px;  /* ajuster selon la hauteur réelle de ta navbar */
+}
+.page-wrapper {
+
+  max-width: 1900px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 2rem 1rem;
 }
-/* Toutes les cards qui ont .shadow-sm */
-.card.shadow-sm {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card.shadow-sm:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-}
-
-/* Boutons personnalisés */
-.btn {
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.btn:hover {
-  transform: scale(1.05);
-}
-
-/* Titres qui apparaissent en fondu */
-.fade-title {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-title.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Cards – plus d’espace sur grand écran */
+@media (min-width: 992px) {
+  .card {
+    padding: 2rem;
+    border-radius: 0.75rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Hero section (Home.jsx) – desktop layout */
+@media (min-width: 992px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .hero-text {
+    flex: 1 1 400px;
+    text-align: left;
+  }
+  .hero-image {
+    flex: 1 1 400px;
+    max-width: 500px;
   }
 }
 
-.card {
-  padding: 2em;
+/* Hero fallback mobile – pile les blocs */
+@media (max-width: 991px) {
+  .hero {
+    display: block;
+    text-align: center;
+  }
+  .hero-text, .hero-image {
+    margin-bottom: 1.5rem;
+  }
 }
 
-.read-the-docs {
-  color: #888;
-}

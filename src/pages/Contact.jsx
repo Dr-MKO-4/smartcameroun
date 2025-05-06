@@ -12,7 +12,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-5" style={{ maxWidth: '600px' }}>
+    <div className="py-5" style={{ width: '1480.9px' }}  >
       <h1 className="text-3xl font-bold mb-4 text-center">Contactez-nous</h1>
       <Form onSubmit={handleSubmit} className="space-y-4">
         <Form.Group className="mb-3">
